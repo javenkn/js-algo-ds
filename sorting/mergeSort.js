@@ -35,7 +35,7 @@ function merge(arr, arr2) {
 }
 
 /**
- * Sorts array using merge method (Recursive).
+ * Sorts array using merge sort method (Recursive).
  *
  * Time complexity: O(n log n)
  *
