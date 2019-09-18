@@ -48,3 +48,38 @@ function mostDigits(nums) {
   }
   return maxDigits;
 }
+
+/**
+ * Sorts array using radix sort method (Recursive).
+ *
+ * Time complexity: O(nm)
+ *
+ * n = length of array
+ * m = number of digits
+ *
+ * Space complexity: O(n+m)
+ *
+ * A newly created array to store sorted elements.
+ *
+ * @param {Array} arr
+ *
+ * @return {Array}
+ *
+ */
+
+function radixSort(arr) {
+  const maxDigitCount = mostDigits(arr);
+
+  for (let i = 0; i < maxDigitCount; i++) {
+    let digitBuckets = Array.from({ length: 10 }, () => []);
+    for (let j = 0; j < arr.length; j++) {
+      const currDigit = getDigit(arr[j], i);
+      digitBuckets[currDigit] = [...digitBuckets[currDigit], arr[j]];
+    }
+    arr = [].concat(...digitBuckets); // [].concat(...[[1],[2],[3]]) => [1,2,3]
+  }
+
+  return arr;
+}
+
+radixSort([23, 567, 345, 5477, 12, 2341, 9834]);
