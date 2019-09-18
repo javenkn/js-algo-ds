@@ -74,3 +74,5 @@ function quickSort(arr, left = 0, right = arr.length - 1) {
 
   return arr;
 }
+
+quickSort([10, 7, 28, 15, 80, 74]);
