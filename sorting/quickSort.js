@@ -33,6 +33,20 @@ function pivot(arr, startIndex = 0, endIndex = arr.length - 1) {
 /**
  * Sorts array using quick sort method (Recursive).
  *
+ * Time complexity:
+ *
+ *  Best: O(n log n)
+ *    O(log n) decompositions: 2^n, The number of times needed to split the array.
+ *                             (same as merge sort)
+ *    O(n) comparisons per decomposition
+ *  Worst: O(n^2)
+ *    if pivot is always min/max element, we would
+ *    have to make O(n) decompositions and O(n) comparisons per decomposition.
+ *
+ * Space complexity: O(log n)
+ *
+ * A newly created array to store sorted elements.
+ *
  * [4,6,9,1,2,5,3]    Original array
  * [3,1,2,4,6,9,5]    (1) Implements pivot and gets index
  *        4
